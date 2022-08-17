@@ -25,7 +25,8 @@ import styled from "styled-components";
   height: 100%;
   text-align: left;
   border: 1px solid rgba(145, 144, 148, 0.3);
-  padding: 5px;  
+  padding: 5px;
+  white-space: pre;  
   `;
   const Button = styled.li`
   display: flex;
@@ -48,7 +49,8 @@ export function CommentList(props) {
       <CommentUl>
       {props.comments.map(comment => (
           <CommentLi key = {comment.commentId}>
-            {comment.content}<br></br>
+            {comment.content}
+            <br></br>
             {`작성자: ${comment.userWalletAddress}`}
             <Button>
             <Link to = {`comment/${comment.commentId}/update`}  state = {{ comment: comment }} className="subnav_link">
