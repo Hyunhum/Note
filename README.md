@@ -17,41 +17,41 @@ entity는 note와 comment이고 일대다 관계로 맵핑되어 있습니다.
 
 주요 api는 다음과 같습니다.
 
-1. getNoteAll(/note/list)
+## 1. getNoteAll(/note/list)
 
-offset, limit을 requestParam으로 요청해 페이지네이션이 적용된 리스트를 반환합니다.
+  offset, limit을 requestParam으로 요청해 페이지네이션이 적용된 리스트를 반환합니다.
 
-2. getNoteById(/note/{noteId})
+## 2. getNoteById(/note/{noteId})
 
-noteId를 pathVariable로 요청해 하나의 노트dto를 반환합니다.
+  noteId를 pathVariable로 요청해 하나의 노트dto를 반환합니다.
 
-3. createNote(/note/creation)
+## 3. createNote(/note/creation)
 
-noteRequetDto를 requestBody로 요청하여 새로운 노트를 작성하는 api 입니다.
+  noteRequetDto를 requestBody로 요청하여 새로운 노트를 작성하는 api 입니다.
 
-4. updateNote(/note/update)
+## 4. updateNote(/note/update)
 
-noteRequetDto를 requestBody로 요청하여 기존 노트를 수정하는 api 입니다.
+  noteRequetDto를 requestBody로 요청하여 기존 노트를 수정하는 api 입니다.
 
-5. deleteNote(/note/deletion)
+## 5. deleteNote(/note/deletion)
 
-noteRequetDto를 requestBody로 요청하여 기존 노트를 삭제하는 api 입니다.
+  noteRequetDto를 requestBody로 요청하여 기존 노트를 삭제하는 api 입니다.
 
-6. getCommentsByNoteId(/note/{noteId}/comment)
+## 6. getCommentsByNoteId(/note/{noteId}/comment)
 
-noteId를 pathVariable로 요청해 해당 노트의 자식 관계에 있는 comment 리스트를 반환합니다.
+  noteId를 pathVariable로 요청해 해당 노트의 자식 관계에 있는 comment 리스트를 반환합니다.
 
-7. createComment(/note/comment/creation)
+## 7. createComment(/note/comment/creation)
 
-commentRequetDto를 requestBody로 요청하여 새로운 댓글을 작성하는 api 입니다.
+  commentRequetDto를 requestBody로 요청하여 새로운 댓글을 작성하는 api 입니다.
 
-8. updateComment(/note/comment/update)
+## 8. updateComment(/note/comment/update)
 
-commentRequetDto를 requestBody로 요청하여 기존 댓글을 수정하는 api 입니다.
+  commentRequetDto를 requestBody로 요청하여 기존 댓글을 수정하는 api 입니다.
 
-9. deleteComment(/note/comment/deletion)
+## 9. deleteComment(/note/comment/deletion)
 
-commentRequetDto를 requestBody로 요청하여 기존 댓글을 삭제하는 api 입니다.
+  commentRequetDto를 requestBody로 요청하여 기존 댓글을 삭제하는 api 입니다.
 
 # front
 
@@ -71,26 +71,26 @@ server 프로젝트와 함께 실행하여 개발환경에서 프록시를 통�
 
 주요 페이지는 다음과 같습니다.
 
-1. Account("")
+## 1. Account("")
 
-메인 페이지로 지갑을 연결 혹은 해제합니다. 연결 시 메모를 작성 혹은 메모 리스트를 확인할 수 있는 navbar 컴포넌트를 렌더링합니다.
+  메인 페이지로 지갑을 연결 혹은 해제합니다. 연결 시 메모를 작성 혹은 메모 리스트를 확인할 수 있는 navbar 컴포넌트를 렌더링합니다.
 
-2. NoteList("note/list")
+## 2. NoteList("note/list")
 
-작성한 메모 리스트를 확인할 수 있습니다. 제목과 작성자가 표시된 형태로 확인되고, 페이지네이션이 가능합니다.
+  작성한 메모 리스트를 확인할 수 있습니다. 제목과 작성자가 표시된 형태로 확인되고, 페이지네이션이 가능합니다.
 
-3. NoteCreate(note/creation)
+## 3. NoteCreate(note/creation)
 
-메모를 작성할 수 있습니다. 제목과 내용을 작성합니다.
+  메모를 작성할 수 있습니다. 제목과 내용을 작성합니다.
 
-4. NoteSingle(note/list/:noteId)
+## 4. NoteSingle(note/list/:noteId)
 
-메모 상세보기로, 해당 메모를 수정, 삭제할 수 있는 버튼과 함께 해당 메모에 달린 댓글 리스트를 불러옵니다. 이 때 댓글을 수정, 삭제할 수 있는 버튼 역시 불러옵니다.
+  메모 상세보기로, 해당 메모를 수정, 삭제할 수 있는 버튼과 함께 해당 메모에 달린 댓글 리스트를 불러옵니다. 이 때 댓글을 수정, 삭제할 수 있는 버튼 역시 불러옵니다.
 
-5. NoteSingle(note/list/:noteId/update)
+## 5. NoteSingle(note/list/:noteId/update)
 
-메모를 수정할 수 있습니다. 제목과 내용을 수정합니다.
+  메모를 수정할 수 있습니다. 제목과 내용을 수정합니다.
 
-6. NoteSingle(note/list/:noteId/comment/:commentId/update)
+## 6. NoteSingle(note/list/:noteId/comment/:commentId/update)
 
-특정 메모에 달린 특정 댓글을 수정할 수 있습니다. 제목과 내용을 수정합니다.
+  특정 메모에 달린 특정 댓글을 수정할 수 있습니다. 제목과 내용을 수정합니다.
