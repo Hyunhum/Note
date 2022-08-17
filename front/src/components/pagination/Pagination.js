@@ -27,13 +27,15 @@ const PageLi = styled.li`
   }
 `;
 
-const PageSpan = styled.span`
-  &:hover::after,
-  &:focus::after {
-    border-radius: 100%;
-    color: white;
-    background-color: #263a6c;
-  }
+const CurrentPageLi = styled.li`
+  display: inline-block;
+  font-size: 17px;
+  font-weight: 600;
+  padding: 5px;
+  border-radius: 5px;
+  width: 25px;
+  color: white;
+  background-color: #263a6c;
 `;
 
 export const Pagination = ({pageChange, page}) => {
@@ -54,10 +56,13 @@ export const Pagination = ({pageChange, page}) => {
       <nav>
         <PageUl className="pagination">
           {pageNumbers.map((number) => (
-            <PageLi key={number} className="page-item">
-              <PageSpan onClick={() => pageChange(number)} className="page-link">
+            number === page? 
+            <CurrentPageLi key={number} className="page-item">
                 {number}
-              </PageSpan>
+            </CurrentPageLi>
+            :
+            <PageLi onClick={() => pageChange(number)} key={number} className="page-item">
+                {number}
             </PageLi>
           ))}
         </PageUl>

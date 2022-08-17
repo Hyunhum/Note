@@ -50,7 +50,7 @@ export function NoteList() {
   const [page, setPage] = useState(1);
 
   let offset = page-1;
-  let limit = 2;
+  let limit = 20;
 
   const query = `?offset=${offset}&limit=${limit}`
 
