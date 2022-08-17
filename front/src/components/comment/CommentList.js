@@ -26,7 +26,7 @@ import styled from "styled-components";
   text-align: left;
   border: 1px solid rgba(145, 144, 148, 0.3);
   padding: 5px;
-  white-space: pre;  
+  white-space: pre-wrap;  
   `;
   const Button = styled.li`
   display: flex;
