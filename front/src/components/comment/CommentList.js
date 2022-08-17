@@ -6,39 +6,39 @@ import { NoteSingle } from '../../pages/note/NoteSingle';
 import { CommentDelete } from './CommentDelete';
 import styled from "styled-components";
 
-const CommentUl = styled.ul`
+  const CommentUl = styled.ul`
   float: center;
   list-style: none;
   margin: 0px;
   padding: 0px;
-  width: 80%;
-  margin: 0 0 0 10%;
+  margin: 0 0 0 29%;
   padding: 0;
-`;
-
-const CommentLi = styled.li`
-
+  `;
+  const CommentLi = styled.li`
   top: 40%;
-  display: inline-block;
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-all;
   font-size: 13px;
   font-weight: 600;
-  width: 60%;
-  height: 35px;
-  border-radius: 5px;
-  background-color: #f4f3ee;
-  border-top: 1px solid rgba(145, 144, 148, 0.3);
-  border-bottom: 1px solid rgba(145, 144, 148, 0.3);
-  &:hover {
-    cursor: pointer;
-    color: white;
-    background-color: #263a6c;
-  }
-  &:focus::after {
-    color: white;
-    background-color: #263a6c;
-  }
-`;
-
+  width: 58%;
+  height: 100%;
+  text-align: left;
+  border: 1px solid rgba(145, 144, 148, 0.3);
+  padding: 5px;  
+  `;
+  const Button = styled.li`
+  display: flex;
+  flex-wrap: wrap;
+  word-break: break-all;
+  font-size: 12px;
+  font-weight: 600;
+  width: 58%;
+  height: 100%;
+  text-align: left;
+  padding: 5px;  
+  align: center;
+  `;
 
 
 export function CommentList(props) {
@@ -50,11 +50,13 @@ export function CommentList(props) {
           <CommentLi key = {comment.commentId}>
             {comment.content}<br></br>
             {`작성자: ${comment.userWalletAddress}`}
+            <Button>
             <Link to = {`comment/${comment.commentId}/update`}  state = {{ comment: comment }} className="subnav_link">
             <button type="button">
                수정하기
             </button></Link>
             <CommentDelete commentId = {comment.commentId} />
+            </Button>
             </CommentLi>     
       ))}
       </CommentUl>
