@@ -87,10 +87,10 @@ server 프로젝트와 함께 실행하여 개발환경에서 프록시를 통�
 
   메모 상세보기로, 해당 메모를 수정, 삭제할 수 있는 버튼과 함께 해당 메모에 달린 댓글 리스트를 불러옵니다. 이 때 댓글을 수정, 삭제할 수 있는 버튼 역시 불러옵니다.
 
-## 5. NoteSingle(note/list/:noteId/update)
+## 5. NoteUpdate(note/list/:noteId/update)
 
   메모를 수정할 수 있습니다. 제목과 내용을 수정합니다.
 
-## 6. NoteSingle(note/list/:noteId/comment/:commentId/update)
+## 6. CommentUpdate(note/list/:noteId/comment/:commentId/update)
 
   특정 메모에 달린 특정 댓글을 수정할 수 있습니다. 제목과 내용을 수정합니다.
