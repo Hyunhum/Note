@@ -60,7 +60,7 @@ export function NoteSingle() {
   background-color: #f4f3ee;
   padding: 5px;  
   align: center;
-  white-space: pre;
+  white-space: pre-wrap;
   `;
   const Button = styled.li`
   display: flex;
