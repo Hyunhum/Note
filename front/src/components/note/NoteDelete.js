@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import { useRecoilValue } from 'recoil';
-import { walletState } from '../states/walletState';
+import { walletState } from '../../states/walletState';
 import { useWeb3React } from "@web3-react/core";
 
 export function NoteDelete(props) {

@@ -3,7 +3,7 @@ import { useWeb3React } from "@web3-react/core";
 import { injectedConnector } from "../../connector";
 import { setupNetwork } from "../../connector/setUpNetwork";
 import { formatEther } from '@ethersproject/units'
-import Navbar from '../navbar/Navbar';
+import Navbar from '../../components/navbar/Navbar';
 import React, {useState, useEffect} from 'react';
 import { useRecoilState } from 'recoil';
 import { walletState } from '../../states/walletState';

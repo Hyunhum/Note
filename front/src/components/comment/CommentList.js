@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import '../navbar/Link.css'
 import { Pagination } from '../pagination/Pagination';
-import { NoteSingle } from '../../pages/NoteSingle';
+import { NoteSingle } from '../../pages/note/NoteSingle';
 import { CommentDelete } from './CommentDelete';
 import styled from "styled-components";
 

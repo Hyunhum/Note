@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from "react-router-dom";
-import '../components/navbar/Link.css'
-import { Pagination } from '../components/pagination/Pagination';
+import '../../components/navbar/Link.css'
+import { Pagination } from '../../components/pagination/Pagination';
 import styled from "styled-components";
 
 const NoteUl = styled.ul`

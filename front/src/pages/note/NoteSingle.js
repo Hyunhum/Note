@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import { useLocation } from 'react-router-dom';
-import { NoteDelete } from './NoteDelete';
+import { NoteDelete } from '../../components/note/NoteDelete';
 import { Link } from "react-router-dom";
-import { CommentList } from '../components/comment/CommentList';
-import { CommentCreate } from '../components/comment/CommentCreate';
-import '../components/navbar/Link.css'
+import { CommentList } from '../../components/comment/CommentList';
+import { CommentCreate } from '../../components/comment/CommentCreate';
+import '../../components/navbar/Link.css'
 import { useWeb3React } from "@web3-react/core"
-import { injectedConnector } from "../connector";
+import { injectedConnector } from "../../connector";
 
 export function NoteSingle() {
 

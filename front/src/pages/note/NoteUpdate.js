@@ -1,32 +1,35 @@
 import React, {useState, useEffect} from 'react';
+import { useLocation } from 'react-router-dom';
 import { useRecoilValue } from 'recoil';
-import { walletState } from '../states/walletState';
-import { useWeb3React } from "@web3-react/core";
-import { injectedConnector } from "../connector";
-import { useNavigate } from 'react-router-dom'
+import { walletState } from '../../states/walletState';
+import { useWeb3React } from "@web3-react/core"
+import { injectedConnector } from "../../connector";
+import { useNavigate } from 'react-router-dom';
 
-export function NoteCreate() {
+export function NoteUpdate() {
   
-  const {active, activate} = useWeb3React();
+  const location = useLocation();
+
+  const note = location.state.note;
+  
+  const {account, active, activate} = useWeb3React();
+
+  const navigate = useNavigate();
 
   if (!active) {
     activate(injectedConnector);
   }
 
-  const {account} = useWeb3React();
+  const updateNote = () => {
 
-  const navigate = useNavigate();
-
-  const createNote = () => {
-
-    fetch('/note/creation',
+    fetch('/note/update',
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-          noteId: 0,
+          noteId: note.noteId,
           userWalletAddress: account,
           title: title,
           content: content})
@@ -40,8 +43,9 @@ export function NoteCreate() {
         alert(response.message);
         navigate(-1);
       }
+    
     })
-    .catch(() => alert("양식이 올바르지 않습니다."));;
+    .catch(() => alert("양식이 올바르지 않거나 수정 권한이 없습니다."));
   }
 
   let title;
@@ -64,8 +68,8 @@ export function NoteCreate() {
       <textarea cols="40" rows="40" style={{height: "300px", width: "700px"}} onChange={contentChange}/>
       <br></br>
       <br></br>
-      <button type="button" onClick = { () => window.confirm('메모를 생성하시겠습니까?') ?
-           createNote() : alert("메모 생성이 취소되었습니다.")} >메모 생성</button>
+      <button type="button" onClick = { () => window.confirm('메모를 수정하시겠습니까?') ?
+           updateNote() : alert("메모 수정이 취소되었습니다.")} >메모 수정</button>
     </div>
     )
 }
