@@ -13,15 +13,21 @@ function Account() {
     const {chainId, account, library, activate, deactivate, active} = useWeb3React()
 
     const [wallet, setWallet] = useRecoilState(walletState);
+
+    if (!active && JSON.parse(sessionStorage.getItem("connection"))) {
+      activate(injectedConnector);
+    }
     
     const activateWallet = () => {
       if (setupNetwork()) {
         activate(injectedConnector);
+        sessionStorage.setItem("connection", true);
       }
     }
 
     const deactivateWallet = () => {
         deactivate(injectedConnector);
+        sessionStorage.setItem("connection", false);
         alert("지갑 연결이 해제되었습니다!");
     }
 
